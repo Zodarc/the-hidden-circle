@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Send, CheckCircle } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
@@ -12,11 +13,41 @@ export default function Join() {
   const [formState, setFormState] = useState<FormState>("idle");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setFormState("submitting");
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setFormState("success");
-  };
+  e.preventDefault();
+
+  setFormState("submitting");
+
+  const form = e.currentTarget;
+  const formData = new FormData(form);
+
+  const { error } = await supabase
+    .from("join_requests")
+    .insert([
+      {
+        first_name: formData.get("firstName"),
+        last_name: formData.get("lastName"),
+        email: formData.get("email"),
+        country: formData.get("country"),
+        profession: formData.get("profession"),
+        message: formData.get("message"),
+        referral: formData.get("referral"),
+      },
+    ]);
+
+  if (error) {
+    console.error(error);
+    setFormState("error");
+    return;
+  }
+
+  form.reset();
+  setFormState("success");
+};
+{formState === "error" && (
+  <div className="mt-4 rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-center text-red-300">
+    Unable to submit your request. Please try again later.
+  </div>
+)}
 
   const inputClass = "input-field";
 
@@ -151,13 +182,13 @@ export default function Join() {
 
               <div className="flex flex-col gap-2.5">
                 <label className="font-sans text-[0.65rem] tracking-[0.28em] text-[#F5F5F5]/45 uppercase">
-                  Referral Code{" "}
+                  phone number{" "}
                   <span className="text-[#F5F5F5]/25 normal-case tracking-normal">(if any)</span>
                 </label>
                 <input
                   type="text"
                   name="referral"
-                  placeholder="Enter referral code"
+                  placeholder="Enter phone number"
                   className={inputClass}
                 />
               </div>
