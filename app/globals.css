@@ -1,0 +1,221 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0B0B0B;
+  --foreground: #F5F5F5;
+  --gold: #D4AF37;
+  --gold-light: #e8c84a;
+  --gold-dark: #b8942e;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-black: #0B0B0B;
+  --color-white: #F5F5F5;
+  --font-heading: var(--font-cinzel);
+  --font-sans: var(--font-inter);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #0B0B0B;
+  color: #F5F5F5;
+  font-family: var(--font-inter), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─── Gold divider utility ─────────────────────────────── */
+.gold-divider {
+  width: 64px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #D4AF37 40%, transparent);
+}
+
+/* ─── Section divider ─────────────────────────────────── */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #D4AF37/20 20%, #D4AF37/30 50%, #D4AF37/20 80%, transparent 100%);
+}
+
+/* ─── Glassmorphism card ──────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  box-shadow:
+    0 1px 0 0 rgba(212, 175, 55, 0.06) inset,
+    0 24px 48px -12px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow:
+    0 1px 0 0 rgba(212, 175, 55, 0.1) inset,
+    0 32px 64px -16px rgba(0, 0, 0, 0.7),
+    0 0 24px -8px rgba(212, 175, 55, 0.08);
+  transform: translateY(-2px);
+}
+
+/* ─── Input focus ring ────────────────────────────────── */
+.input-field {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  color: #F5F5F5;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.875rem;
+  padding: 0.875rem 1.125rem;
+  width: 100%;
+  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  outline: none;
+  appearance: none;
+}
+
+.input-field::placeholder {
+  color: rgba(245, 245, 245, 0.2);
+}
+
+.input-field:focus {
+  border-color: rgba(212, 175, 55, 0.65);
+  background: rgba(212, 175, 55, 0.03);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.06), 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* ─── Button base ─────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.875rem 2.25rem;
+  background: #D4AF37;
+  color: #0B0B0B;
+  font-family: var(--font-cinzel), serif;
+  font-size: 0.6875rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #e8c84a;
+  box-shadow: 0 8px 24px -4px rgba(212, 175, 55, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.875rem 2.25rem;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  color: #D4AF37;
+  font-family: var(--font-cinzel), serif;
+  font-size: 0.6875rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-ghost:hover {
+  border-color: #D4AF37;
+  background: #D4AF37;
+  color: #0B0B0B;
+  transform: translateY(-1px);
+}
+
+/* ─── Section header ──────────────────────────────────── */
+.section-eyebrow {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 0.6875rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: #D4AF37;
+  margin-bottom: 1.25rem;
+}
+
+.section-title {
+  font-family: var(--font-cinzel), serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #F5F5F5;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+/* ─── Scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0B0B;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.4);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.7);
+}
+
+/* ─── Swiper overrides ────────────────────────────────── */
+.swiper-pagination {
+  bottom: 28px !important;
+}
+.swiper-pagination-bullet {
+  width: 6px !important;
+  height: 6px !important;
+  background: rgba(212, 175, 55, 0.4) !important;
+  opacity: 1 !important;
+  transition: width 0.3s ease, background 0.3s ease !important;
+}
+.swiper-pagination-bullet-active {
+  width: 24px !important;
+  border-radius: 3px !important;
+  background: #D4AF37 !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: rgba(212, 175, 55, 0.7) !important;
+  transition: color 0.25s ease !important;
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #D4AF37 !important;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 18px !important;
+}
+
+/* ─── Selection ───────────────────────────────────────── */
+::selection {
+  background: rgba(212, 175, 55, 0.25);
+  color: #F5F5F5;
+}
