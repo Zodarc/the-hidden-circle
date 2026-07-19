@@ -339,7 +339,7 @@ Illuminati Uganda | Illuminati Contact Uganda | Secret Society Experience | Hidd
   },
   {
     id: "11",
-    slug: "how to join illuminati +256700895745",
+    slug: "how-to-join-illuminati-+256700895745",
     title: "☎ +256700895745 JOIN THE ILLUMINATI SECRET SOCIETY EXPERIENCE — UNLOCK HIDDEN KNOWLEDGE & BEGIN YOUR JOURNEY",
     excerpt:
       "HOW TO JOIN THE ILLUMINATI EXPERIENCE",
