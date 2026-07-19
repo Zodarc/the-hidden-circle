@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Send, CheckCircle } from "lucide-react";
+import { Send, CheckCircle, phone } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
 type FormState = "idle" | "submitting" | "success" | "error";
@@ -30,7 +30,7 @@ export default function Join() {
         country: formData.get("country"),
         profession: formData.get("profession"),
         message: formData.get("message"),
-        referral: formData.get("referral"),
+        phone: formData.get("phone"),
       },
     ]);
 
@@ -39,15 +39,26 @@ export default function Join() {
     setFormState("error");
     return;
   }
+  await fetch("/api/join", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    firstName: formData.get("firstName"),
+    lastName: formData.get("lastName"),
+    email: formData.get("email"),
+    country: formData.get("country"),
+    profession: formData.get("profession"),
+    message: formData.get("message"),
+    phone: formData.get("phone"),
+  }),
+});
 
   form.reset();
   setFormState("success");
 };
-{formState === "error" && (
-  <div className="mt-4 rounded-lg border border-red-500/30 bg-red-500/10 p-4 text-center text-red-300">
-    Unable to submit your request. Please try again later.
-  </div>
-)}
+
 
   const inputClass = "input-field";
 
@@ -187,7 +198,7 @@ export default function Join() {
                 </label>
                 <input
                   type="text"
-                  name="referral"
+                  name="phone"
                   placeholder="Enter phone number"
                   className={inputClass}
                 />
