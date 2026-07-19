@@ -247,7 +247,7 @@ Are you ready to unlock the unknown?
   },
   {
     id: "8",
-    slug: "what-was-the-bavarian-illuminati +256700895745",
+    slug: "what-was-the-bavarian-illuminati+256700895745",
     title: "☎ +256700895745 ILLUMINATI UGANDA: THE HIDDEN DOOR HAS OPENED — ARE YOU READY TO DISCOVER THE UNKNOWN?",
     excerpt:
       "The members who have shaped The Circle most profoundly are rarely the most prominent in their lifetimes. Legacy is a long game, and The Circle is patient.",

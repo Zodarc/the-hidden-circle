@@ -12,11 +12,35 @@ export default function Contact() {
   const [formState, setFormState] = useState<FormState>("idle");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setFormState("submitting");
-    await new Promise((resolve) => setTimeout(resolve, 1400));
-    setFormState("success");
-  };
+  e.preventDefault();
+
+  setFormState("submitting");
+
+  const form = e.currentTarget;
+  const formData = new FormData(form);
+
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: formData.get("name"),
+      email: formData.get("email"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    }),
+  });
+
+  if (!res.ok) {
+    alert("Unable to send message.");
+    setFormState("idle");
+    return;
+  }
+
+  form.reset();
+  setFormState("success");
+};
 
   const contactDetails = [
     {
