@@ -56,7 +56,7 @@ When a member receives their seal, they are receiving not merely an object but a
     author: "The Historian",
     category: "Symbolism",
     image: "/images/articles/article-02-symbols.jpg",
-    featured: true,
+    featured: false,
     readTime: 5,
     tags: ["symbols", "design", "meaning", "ritual"],
   },
