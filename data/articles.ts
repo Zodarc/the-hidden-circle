@@ -33,7 +33,7 @@ The seal bears no name. Only a symbol. A circle, incomplete, with a single gap a
     author: "The Archivist",
     category: "History",
     image: "/images/articles/article-01-history.jpg",
-    featured: true,
+    featured: false,
     readTime: 6,
     tags: ["founding", "history", "legacy", "1921"],
   },
