@@ -202,7 +202,7 @@ Within the fictional Illuminati archives, members discover:
 
 The true treasure is not gold or status.
 
-The true treasure is **knowledge**.
+The true treasure is knowledge.
 
 ---
 
@@ -210,7 +210,7 @@ The true treasure is **knowledge**.
 
 Those who complete the journey become known as:
 
-## **THE ENLIGHTENED ONES**
+## THE ENLIGHTENED ONES
 
 Their fictional achievements include:
 
@@ -234,10 +234,10 @@ For those ready to enter this fictional world, explore the mysteries, and begin 
 
 ## ☎ +256700895745
 
-**Are you ready to unlock the unknown?**
+Are you ready to unlock the unknown?
 
-*"Every legend begins with someone brave enough to search for the truth."`,
-    date: "2026-18-07",
+"Every legend begins with someone brave enough to search for the truth."`,
+    date: "2026-07-18",
     author: "The Agent",
     category: "path",
     image: "/images/articles/article-03-members.jpg",
