@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Send, CheckCircle, phone } from "lucide-react";
+import { Send, CheckCircle, Phone } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 
 type FormState = "idle" | "submitting" | "success" | "error";
