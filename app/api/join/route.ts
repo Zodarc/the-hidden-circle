@@ -19,7 +19,7 @@ export async function POST(req: Request) {
         <p><strong>Email:</strong> ${data.email}</p>
         <p><strong>Country:</strong> ${data.country}</p>
         <p><strong>Profession:</strong> ${data.profession}</p>
-        <p><strong>phone:</strong> ${data.phone || "None"}</p>
+        <p><strong>Phone:</strong> ${data.Phone || "None"}</p>
 
         <hr>
 

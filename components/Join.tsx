@@ -30,7 +30,7 @@ export default function Join() {
         country: formData.get("country"),
         profession: formData.get("profession"),
         message: formData.get("message"),
-        phone: formData.get("phone"),
+        Phone: formData.get("Phone"),
       },
     ]);
 
@@ -51,7 +51,7 @@ export default function Join() {
     country: formData.get("country"),
     profession: formData.get("profession"),
     message: formData.get("message"),
-    phone: formData.get("phone"),
+    Phone: formData.get("Phone"),
   }),
 });
 
@@ -193,13 +193,13 @@ export default function Join() {
 
               <div className="flex flex-col gap-2.5">
                 <label className="font-sans text-[0.65rem] tracking-[0.28em] text-[#F5F5F5]/45 uppercase">
-                  phone number{" "}
+                  Phone number{" "}
                   <span className="text-[#F5F5F5]/25 normal-case tracking-normal">(if any)</span>
                 </label>
                 <input
                   type="text"
-                  name="phone"
-                  placeholder="Enter phone number"
+                  name="Phone"
+                  placeholder="Enter Phone number"
                   className={inputClass}
                 />
               </div>
